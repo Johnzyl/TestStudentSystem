@@ -45,4 +45,10 @@ template.query（sql语句，对应的Entity对象)
         String sql="INSERT into user(username,password,name,telephone,sex,age,role ) VALUES(?,?,?,?,?,?,?);";
         template.update(sql,user.getUsername(),user.getPassword(),user.getName(),user.getTelephone(),user.getSex(),user.getAge(),user.getRole());
     }
+
+    @Override
+    public void forget(User user) {
+        String sql="UPDATE user SET password=? WHERE username=?;";
+        template.update(sql,user.getPassword(),user.getUsername());
+    }
 }

@@ -59,7 +59,7 @@
 				<div class="submit">
 					<input type="submit" value="Sign in">
 					<h4>
-						<a href="#">忘记密码 ?</a>
+						<a href="<%=path%>forget.jsp">忘记密码 ?</a>
 					</h4>
 					<h4>
 						<a href="<%=path%>register.jsp">注册 ?</a>

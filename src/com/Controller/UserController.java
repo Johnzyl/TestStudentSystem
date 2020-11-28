@@ -24,9 +24,19 @@ public class UserController extends HttpServlet {
             login(request,response);
         if(method.equals("register"))
             register(request,response);
+        if(method.equals("forget"))
+            forget(request,response);
 
     }
-
+    private void forget(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        User user=new User();
+        user.setUsername(request.getParameter("username"));
+        user.setPassword(request.getParameter("password"));
+        //调用服务
+        userService.forget(user);
+        //跳转界面
+        request.getRequestDispatcher("login.jsp").forward(request, response);
+    }
     private void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user=new User();
         user.setUsername(request.getParameter("username"));

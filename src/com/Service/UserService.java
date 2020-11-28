@@ -16,4 +16,6 @@ public class UserService {
     public void insert(User user) {
          userDao.insert(user);
     }
+
+    public void forget(User user) {userDao.forget(user);}
 }
